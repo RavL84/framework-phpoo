@@ -15,6 +15,8 @@ class SimpleForm
     
     public function __construct($name)
     {
+//        print "Dentro do construtor";
+//        exit();
         
         $this->name = $name;
         $this->fields = [];

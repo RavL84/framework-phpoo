@@ -1,12 +1,9 @@
 {
-    "name": "lib/livro",
-    "description": "Curso PHP OO",
-    "type": "project",
     "autoload": {
-        "psr-4": {
-            "Lib\\Livro\\": "src/"
-        }
+        "psr-4": {"Livro\\": "framework-phpoo/"}
     },
-    "minimum-stability": "dev",
-    "require": {}
+    
+     "require-dev": {
+        "phpunit/phpunit": "^9"
+    }
 }
