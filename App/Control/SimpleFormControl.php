@@ -1,11 +1,23 @@
 <?php
-use Livro\Control\Page;
+
+use Livro\Control\AbstractPage;
 use Livro\Widgets\Form\SimpleForm;
 
-class SimpleFormControl extends Page
-{
-    public function __construct()
-    {       
+/*
+ * Description of SimpleFormControl
+ * 
+ * Classe que monta o componente fornecendo os dados, nesse caso está sendo 
+ *   montado um componente do tipo formulario (SimpleForm), fazendo uso o 
+ *   reaproveitamento.
+ * 
+ * 
+ * @author raul
+ * @date 16/11/2022
+ */
+
+class SimpleFormControl extends AbstractPage {
+
+    public function __construct() {
         $form = new SimpleForm('my_form');
         $form->setTitle('título');
         $form->addField('Nome', 'nome', 'text', 'Maria', 'form-control');
@@ -14,11 +26,11 @@ class SimpleFormControl extends Page
         $form->setAction('index.php?class=SimpleFormControl&method=onGravar');
         $form->show();
     }
-    
-    public function onGravar($param)
-    {
+
+    public function onGravar($param) {
         echo '<pre>';
         var_dump($param);
         echo '</pre>';
     }
+
 }

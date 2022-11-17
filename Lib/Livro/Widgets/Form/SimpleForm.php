@@ -1,6 +1,7 @@
 <?php
 /**
  * Description of SimpleForm
+ * 
  *  Essa classe funciona como um componente que monta nesse caso um formulario
  * com todas as configurações passadas na classe de controle que chama esse 
  * componente.

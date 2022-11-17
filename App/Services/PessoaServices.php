@@ -4,9 +4,18 @@ use Livro\DataBase\Transaction;
 
 /**
  * Description of PessoaServices
- *  Classe de serviço com toda a lógica de busca de um objeto
+ * 
+ *  Padrão Remote Facade
+ * 
+ *  Classe de serviço é responsável por buscar um objeto no banco, através do 
+ *   método getData que recebe uma requisição como parâmetro e identifica o id
+ *   através desse id abre uma transação com o banco livro e com o uso da classe
+ *   abstract Record para busca o objeto, converte o objeto em array e retorna 
+ *   os dados em forma de array.
  * 
  * @author raul
+ * @date 16/11/2022
+ * 
  */
 class PessoaServices {
 

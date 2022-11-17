@@ -1,19 +1,18 @@
 <?php
 namespace Livro\Control;
-
 use Livro\Widgets\Base\Element;
 
 /**
  * Page controller
  */
-class Page extends Element
+class Page 
 {
     /**
      * Método construtor
      */
     public function __construct()
     {
-        parent::__construct('div');
+//        parent::__construct('div');
     }
     
     /**
@@ -31,6 +30,6 @@ class Page extends Element
             }
         }
         
-        parent::show();
+//        parent::show();
     }
 }
