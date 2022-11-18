@@ -5,8 +5,8 @@ namespace Livro\Widgets\Base;
 /**
  * Classe suporte para tags
  * 
- * Essa classe auxilia na montagem de outros objetos que auxiliam nas configurações
- *   das tags e suas propriedades assim como estilos;
+ * Essa classe auxilia na montagem de outros objetos que configura 
+ *   as tags e suas propriedades assim como estilos da página web;
  * 
  * @author Raul Alencar
  * @date 16/11/2022
@@ -20,7 +20,7 @@ class Element
     /**
      * Instancia uma tag
      */
-    public function __construct( $name)
+    public function __construct(string $name)
     {
         // define o nome do elemento
         $this->tagname = $name;
@@ -47,7 +47,7 @@ class Element
     /**
      * Adiciona um elemento filho
      */
-    public function add($child)
+    public function add(string |Element $child)
     {
         $this->children[] = $child;
     }
@@ -55,7 +55,7 @@ class Element
     /**
      * Exibe a tag de abertura na tela
      */
-    private function open()
+    private function open(): void
     {
         // exibe a tag de abertura
         echo "<{$this->tagname}";

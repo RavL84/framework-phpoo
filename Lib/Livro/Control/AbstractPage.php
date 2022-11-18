@@ -14,7 +14,7 @@ use Livro\Widgets\Base\Element;
  */
 class AbstractPage extends Element {
 
-    public function __construct($name) {
+    public function __construct() {
         parent::__construct('div');
     }
 
@@ -29,6 +29,11 @@ class AbstractPage extends Element {
                 call_user_func([$this, $method], $_REQUEST);
             }
         }
+//        Esse comando adiciona o elemento dentro da página, sem a necessidade 
+//          de chamar o método show diretamente na classe de controle, nós tornamos
+//          a classe de Page um elemento e adicionamos um construtor que extends 
+//          de Element.
+//          
         parent::show();
     }
 
