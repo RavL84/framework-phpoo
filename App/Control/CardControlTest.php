@@ -6,7 +6,11 @@ use Livro\Widgets\Container\Card;
 /**
  * Description of CardControlTest
  *
+ * Essa classe tem por finalidade criar um elemento Card e atribuir ao mesmo alguns
+ *  estilos e classe bootstrap.
+ * 
  * @author raul
+ * @date 19/11/2022
  */
 class CardControlTest extends AbstractPage{
     public function __construct() {

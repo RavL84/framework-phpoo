@@ -7,7 +7,8 @@ use Livro\Control\IAction;
 
 /**
  * Description of Action
- *
+ * Essa classe é responsável por criar uma ação e identificar os parâmetros que 
+ *  serão usados para montar a url através do método serialize.
  * @author raul
  * @date 20/11/2022
  */
@@ -21,10 +22,13 @@ class Action implements IAction{
         
     }
     
+//    Armazena os parâmetros em $this->param
     public function setParameter( $param,  $value) {
         $this->param[$param] = $value;
     }
     
+//    Verifica os parâmetros passados e a ação passada via construtor.
+//    depois monta a url.
     public function serialize() {
 //        Verifica se a acao e um metodo
         if(is_array($this->action)){

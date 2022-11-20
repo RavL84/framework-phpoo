@@ -4,8 +4,11 @@ use Livro\Control\Action;
 
 /**
  * Description of ActionControlTest
- *
+ * Essa classe testa a Action passando parâmetros e por ultimo serializando os
+ *  parâmetros passados.
+ * 
  * @author raul
+ * @date 20/11/2022
  */
 class ActionControlTest extends AbstractPage{
     public function __construct() {
