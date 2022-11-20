@@ -2,6 +2,7 @@
 namespace Livro\Widgets\Dialog;
 
 use Livro\Widgets\Base\Element;
+use Livro\Control\Action;
 
 
 /**
@@ -16,7 +17,7 @@ use Livro\Widgets\Base\Element;
  */
 class Question {
     
-    public function __construct($message, Action $action_yes, Action $action_no = null) {
+    public function __construct(string $message, Action $action_yes, Action $action_no = null) {
         $div = new Element('div');
         $div->class = 'alert alert-warning';
         
@@ -32,8 +33,11 @@ class Question {
         
         if($action_no){
             $url_no = $action_no->serialize();
-            $action_no->href = $url_no;
-            $link_no->class = 'btn btn-danger';
+            
+            $link_no = new Element('a');
+            $link_no->href = $url_no;
+            $link_no->class = 'btn btn-default';
+            $link_no->style = 'float: rigth';
             $link_no->add('Não');
             
             $message.= $link_no;

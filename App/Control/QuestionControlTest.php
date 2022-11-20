@@ -14,8 +14,8 @@ class QuestionControlTest extends AbstractPage {
         
         $action1 = new Action([$this, 'onConfirmacao']);
         $action2 = new Action([$this, 'onNegacao']);
-        
         new Question('Você deseja confirmar a ação ?', $action1, $action2);
+         
     }
     
     public function onConfirmacao() {
