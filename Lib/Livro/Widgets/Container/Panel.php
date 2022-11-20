@@ -10,12 +10,8 @@ use Livro\Widgets\Base\Element;
  * Essa classe é responsável por montar um painel no formato bootstrap, que será
  *  utilizado como componente e será montado pela classe de controle na aplicação.
  * 
- * 
- * 
- * 
- *
  * @author raul
- * 
+ * @date 18/11/2022
  * 
  */
 class Panel extends Element {
@@ -25,11 +21,14 @@ class Panel extends Element {
 
 //    Cria os objetos Element e adiciona os atributos class através do método 
 //      mágico  __set na classe ancestral Element.
-    public function __construct(string $panelTitle = null) {
-        
-        parent::__construct('div');
-        $this->class = 'panel panel-default';
+    public function __construct(string $panel_title = null) {
 
+        parent::__construct('div');
+        
+        $this->class = 'panel panel-default';
+        
+     
+        
         if ($panel_title) {
             $head = new Element('div');
             $head->class = 'panel-heading';
@@ -42,7 +41,6 @@ class Panel extends Element {
 
             $head->add($title);
             $title->add($label);
-
             parent::add($head);
         }
         $this->body = new Element('div');
@@ -51,13 +49,14 @@ class Panel extends Element {
 
         $this->footer = new Element('div');
         $this->footer->class = 'panel-footer';
+       
     }
 
     /**
      * Adiciona o content no body e utiliza o método da classe ancestral 
      * para adicionar elementos ao body, cada vaz que chamar-mos - método add().
      */
-    public function add(string | Element $content) {
+    public function add(string|Element $content) {
         $this->body->add($content);
     }
 
@@ -65,7 +64,7 @@ class Panel extends Element {
      * Adiciona o content no footer e utiliza o método da classe ancestral 
      * para adicionar elementos ao footer, cada vaz que chamar-mos - método add().
      */
-    public function addFooter(string | Element $footer) {
+    public function addFooter(string|Element $footer) {
         $this->footer->add($footer);
         parent::add($this->footer);
     }

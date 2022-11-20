@@ -47,7 +47,7 @@ class Element
     /**
      * Adiciona um elemento filho
      */
-    public function add(string |Element $child)
+    public function add(string | Element $child)
     {
         $this->children[] = $child;
     }
